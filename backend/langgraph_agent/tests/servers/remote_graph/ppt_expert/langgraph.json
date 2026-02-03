@@ -1,0 +1,10 @@
+{
+  "graphs": {
+    "ppt-expert-v1": "./graph.py:ppt_expert_graph"
+  },
+  "env": ".env",
+  "python_version": "3.12",
+  "dependencies": [
+    ".."
+  ]
+}

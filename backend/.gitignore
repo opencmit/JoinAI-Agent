@@ -1,0 +1,10 @@
+__pycache__
+.idea
+.langgraph_api
+.env
+
+# macos
+.DS_Store
+.Spotlight-V100
+.Trashes
+.trae/

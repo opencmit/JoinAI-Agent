@@ -1,0 +1,286 @@
+JoinAI-Agent
+Copyright 2025 JoinAI-Agent Contributors
+
+This product includes software developed by the JoinAI-Agent project
+and its contributors.
+
+=============================================================================
+COPYRIGHT, PATENT, TRADEMARK, AND ATTRIBUTION NOTICES
+=============================================================================
+
+This software distribution retains all copyright, patent, trademark, and
+attribution notices as required by the Apache License 2.0:
+
+1. Copyright Notices
+   - Retained in LICENSE file (line 190)
+   - Retained in this NOTICE file (line 2)
+   - All copyright notices from third-party components are preserved
+     through their respective package distributions
+
+2. Patent Notices
+   - Patent license granted under Apache License 2.0 Section 3
+   - See LICENSE file for full patent license terms
+
+3. Trademark Notices
+   - Trademark rights reserved under Apache License 2.0 Section 6
+   - See LICENSE file for full trademark terms
+
+4. Attribution Notices
+   - All attribution notices from third-party components are preserved
+   - Third-party component licenses listed below
+   - For BSD-4-Clause licensed components: advertising acknowledgments
+     are included as required by the license terms
+   - For MPL-2.0 licensed components: all notices are preserved; no
+     modifications have been made to MPL-2.0 licensed source code
+   - For AFL-2.1 licensed components: all copyright, patent, trademark,
+     and attribution notices are preserved as required by the license
+
+This product includes third-party software components that are licensed
+under various open source licenses. The following licenses apply to
+components included in this distribution:
+
+=============================================================================
+THIRD-PARTY SOFTWARE LICENSES
+=============================================================================
+
+This software includes components licensed under the following licenses:
+
+1. MIT License
+   - Many dependencies use the MIT License
+   - Full license text available at: https://opensource.org/licenses/MIT
+
+2. BSD-2-Clause License
+   - Some components are licensed under the BSD 2-Clause License
+   - Full license text available at: https://opensource.org/licenses/BSD-2-Clause
+
+3. BSD-3-Clause License
+   - Some components are licensed under the BSD 3-Clause License
+   - Full license text available at: https://opensource.org/licenses/BSD-3-Clause
+
+4. BSD-4-Clause License (BSD with Advertising Clause)
+   - Some components are licensed under the BSD 4-Clause License
+   - Full license text available at: https://spdx.org/licenses/BSD-4-Clause.html
+   - This license requires:
+     * Retention of copyright notices in all redistributions
+     * Retention of full license text and conditions
+     * Inclusion of advertising acknowledgment in advertising materials
+     * Non-endorsement: names of copyright holders and contributors may not
+       be used to endorse or promote products without prior written permission
+   - All copyright, patent, trademark, and attribution notices from
+     BSD-4-Clause licensed components are preserved through their respective
+     package distributions
+
+5. OpenBSD License (OBSD)
+   - Some components are licensed under the OpenBSD License
+   - Full license text available at: https://opensource.org/licenses/OpenBSD
+
+6. ISC License
+   - Some components are licensed under the ISC License
+   - Full license text available at: https://opensource.org/licenses/ISC
+
+7. ICU License
+   - Some components are licensed under the ICU License
+   - Full license text available at: http://source.icu-project.org/repos/icu/icu/trunk/license.html
+
+8. X11 License
+   - Some components are licensed under the X11 License
+   - Full license text available at: https://spdx.org/licenses/X11.html
+
+9. Python-2.0 License
+   - Some components are licensed under the Python 2.0 License
+   - Full license text available at: https://opensource.org/licenses/Python-2.0
+
+10. Sleepycat License (SL)
+    - Some components are licensed under the Sleepycat License
+    - Full license text available at: https://opensource.org/licenses/Sleepycat
+
+11. Python Software Foundation License 2.0 (PSF-2.0)
+    - Some components are licensed under the PSF License 2.0
+    - Full license text available at: https://opensource.org/licenses/PSF-2.0
+
+12. DOC License
+    - Some components are licensed under the DOC License
+    - Please refer to the respective component documentation for full license text
+
+13. NCLFair License
+    - Some components are licensed under the NCLFair License
+    - Please refer to the respective component documentation for full license text
+
+14. Mozilla Public License 2.0 (MPL-2.0)
+    - Some components are licensed under the Mozilla Public License 2.0
+    - Full license text available at: https://www.mozilla.org/en-US/MPL/2.0/
+    - This license requires:
+     * Retention of copyright, patent, trademark, and attribution notices
+     * If MPL-2.0 licensed code is modified: modified source code must be
+       made available under MPL-2.0 when distributed
+     * Modified files must include MPL-2.0 license header (Exhibit A)
+     * Original copyright notices must be retained in modified files
+     * If executables are distributed: corresponding source code must be
+       made available under MPL-2.0
+    - All copyright, patent, trademark, and attribution notices from
+      MPL-2.0 licensed components are preserved through their respective
+      package distributions
+
+15. Academic Free License 2.1 (AFL-2.1)
+    - Some components are licensed under the Academic Free License 2.1
+    - Full license text available at: https://spdx.org/licenses/AFL-2.1.html
+    - This license requires:
+     * Retention of all copyright notices in the Source Code
+     * Retention of all patent notices in the Source Code
+     * Retention of all trademark notices in the Source Code
+     * Retention of all attribution notices identified as "Attribution Notice"
+     * Inclusion of prominent attribution notice in derivative works
+       indicating that the original work has been modified
+     * Provision of source code with every copy of the work distributed
+     * No use of Licensor's or contributors' names to endorse or promote
+       products without prior written permission
+    - All copyright, patent, trademark, and attribution notices from
+      AFL-2.1 licensed components are preserved through their respective
+      package distributions
+
+=============================================================================
+MPL-2.0 LICENSE COMPLIANCE
+=============================================================================
+
+For components licensed under Mozilla Public License 2.0 (MPL-2.0), this
+distribution complies with all requirements:
+
+1. Copyright, Patent, Trademark, and Attribution Notices
+   - All notices from MPL-2.0 licensed components are retained in their
+     source code and preserved through package distributions
+
+2. Source Code Availability (for Modified Code)
+   - **Current Status**: This project does NOT modify any MPL-2.0 licensed
+     source code. All MPL-2.0 licensed components are used as-is through
+     package managers (npm/pnpm for Node.js packages, pip for Python packages)
+   - **If Modified in Future**: If this project modifies any MPL-2.0 licensed
+     code in the future:
+     * Modified source code must be made available under MPL-2.0 when distributed
+     * Modified files must include MPL-2.0 license header (Exhibit A)
+     * Original copyright notices must be retained
+     * Modifier's copyright notice may be added
+     * Modifications should be traceable (e.g., through version control)
+
+3. Executable Distribution
+   - **Current Status**: This project distributes source code. If executables
+     are distributed in the future, corresponding source code for any
+     MPL-2.0 licensed components must be made available under MPL-2.0
+
+4. License Compatibility
+   - MPL-2.0 is compatible with Apache License 2.0
+   - MPL-2.0 is a "file-level" weak copyleft license, meaning only files
+     containing MPL-2.0 code are bound by its copyleft obligations
+   - Non-MPL-2.0 code in this project remains under Apache License 2.0
+
+=============================================================================
+BSD-4-CLAUSE LICENSE COMPLIANCE
+=============================================================================
+
+For components licensed under BSD-4-Clause License (BSD with Advertising
+Clause), this distribution complies with all requirements:
+
+1. Copyright Notices
+   - All copyright notices from BSD-4-Clause licensed components are
+     retained in their source code and preserved through package distributions
+
+2. License Text
+   - Full BSD-4-Clause license text and conditions are retained in the
+     source code of BSD-4-Clause licensed components
+
+3. Advertising Acknowledgment
+   - This product includes software developed by the copyright holders
+     and contributors of BSD-4-Clause licensed components
+   - All advertising materials mentioning features or use of BSD-4-Clause
+     licensed software include the required acknowledgment
+
+4. Non-Endorsement
+   - The names of copyright holders and contributors of BSD-4-Clause
+     licensed components are not used to endorse or promote products
+     derived from this software without specific prior written permission
+
+5. Patent and Trademark Notices
+   - BSD-4-Clause license does not grant patent rights; patent notices
+     are preserved as provided by the original copyright holders
+   - Trademark rights are reserved; names may not be used for endorsement
+     without written permission
+
+=============================================================================
+AFL-2.1 LICENSE COMPLIANCE
+=============================================================================
+
+For components licensed under Academic Free License 2.1 (AFL-2.1), this
+distribution complies with all requirements:
+
+1. Copyright Notices
+   - All copyright notices from AFL-2.1 licensed components are retained
+     in their source code and preserved through package distributions
+   - Original copyright notices are maintained in all redistributions
+
+2. Patent Notices
+   - All patent notices from AFL-2.1 licensed components are retained
+     in their source code and preserved through package distributions
+   - AFL-2.1 provides an express patent grant for patent claims owned or
+     controlled by the Licensor that are embodied in the work
+
+3. Trademark Notices
+   - All trademark notices from AFL-2.1 licensed components are retained
+     in their source code and preserved through package distributions
+   - AFL-2.1 does NOT grant rights to use trademarks, service marks, or
+     names of the Licensor or contributors
+   - The names of Licensor and contributors are not used to endorse or
+     promote products derived from this software without prior written
+     permission
+
+4. Attribution Notices
+   - All attribution notices identified as "Attribution Notice" from
+     AFL-2.1 licensed components are retained in their source code
+   - For derivative works: a prominent attribution notice is included
+     in the source code indicating that the original work has been modified
+   - Attribution notices are preserved through package distributions
+
+5. Source Code Availability
+   - **Current Status**: This project does NOT modify any AFL-2.1 licensed
+     source code. All AFL-2.1 licensed components are used as-is through
+     package managers (npm/pnpm for Node.js packages, pip for Python packages)
+   - **If Modified in Future**: If this project modifies any AFL-2.1 licensed
+     code in the future:
+     * All copyright, patent, trademark, and attribution notices must be
+       retained in the Source Code
+     * A prominent attribution notice must be included indicating that the
+       original work has been modified
+     * Source code must be provided with every copy of the work distributed
+     * Modifications should be traceable (e.g., through version control)
+
+6. License Compatibility
+   - AFL-2.1 is compatible with Apache License 2.0
+   - AFL-2.1 is a permissive open-source license that allows commercial use
+     and creation of derivative works
+   - Non-AFL-2.1 code in this project remains under Apache License 2.0
+
+=============================================================================
+NOTICE REGARDING THIRD-PARTY COMPONENTS
+=============================================================================
+
+This software distribution includes third-party components that are subject
+to the licenses listed above. These components are used in accordance with
+their respective licenses, which are compatible with the Apache License 2.0
+under which this project is distributed.
+
+For a complete list of third-party dependencies and their specific licenses,
+please refer to:
+- Backend dependencies: backend/requirements.txt
+- Frontend dependencies: frontend/package.json
+- License audit documentation: docs/LICENSE_AUDIT.md
+
+You may obtain source code for most of these components from their respective
+repositories or from the package managers used in this project (pip for Python
+packages, npm/pnpm for Node.js packages).
+
+=============================================================================
+APACHE LICENSE 2.0
+=============================================================================
+
+This project is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full text of the Apache License 2.0.
+
+=============================================================================

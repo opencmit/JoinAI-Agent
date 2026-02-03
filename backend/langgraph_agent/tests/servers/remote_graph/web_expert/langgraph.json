@@ -1,0 +1,10 @@
+{
+  "graphs": {
+    "web-expert-v1": "./graph.py:web_expert_graph"
+  },
+  "env": ".env",
+  "python_version": "3.12",
+  "dependencies": [
+    ".."
+  ]
+}

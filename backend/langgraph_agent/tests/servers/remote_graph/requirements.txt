@@ -1,0 +1,12 @@
+# ========== LangGraph 核心框架 ==========
+langgraph>=0.0.20,<0.3.0
+langgraph-api            # LangGraph API 接口
+# ========== LangChain 生态系统 ==========
+langchain>=0.1.0         # LangChain 主框架
+langchain-core>=0.1.0
+langchain-core~=0.3.15   # LangChain 核心组件（特定版本）
+langchain_openai         # OpenAI 集成模块
+
+# ========== Python 工具库 ==========
+typing-extensions>=4.5.0 # 类型提示扩展
+python-dotenv>=1.0.0     # 环境变量管理

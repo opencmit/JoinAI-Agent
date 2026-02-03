@@ -1,0 +1,16 @@
+# A2A 通信协议
+python-a2a==0.5.9
+
+# OpenAI SDK
+openai==1.99.2
+
+# 环境变量管理
+python-dotenv==1.2.1
+
+# 图像处理
+pillow==11.3.0
+
+# HTTP 请求（用于下载图片）
+httpx==0.28.1
+requests==2.32.5
+

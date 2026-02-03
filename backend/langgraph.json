@@ -1,0 +1,14 @@
+{
+  "dockerfile_lines": [],
+  "graphs": {
+    "agent": "./langgraph_agent/graph/graph.py:agent_graph"
+  },
+  "env": ".env",
+  "python_version": "3.12",
+  "dependencies": [
+    "."
+  ],
+  "http": {
+    "app": "./langgraph_agent/app.py:app"
+  }
+}

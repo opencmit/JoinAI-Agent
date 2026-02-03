@@ -1,0 +1,10 @@
+{
+  "graphs": {
+    "design-expert-v1": "./graph.py:design_expert_graph"
+  },
+  "env": ".env",
+  "python_version": "3.12",
+  "dependencies": [
+    ".."
+  ]
+}

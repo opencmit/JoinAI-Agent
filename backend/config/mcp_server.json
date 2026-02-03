@@ -1,0 +1,63 @@
+{
+  "joinai-jina": {
+    "command": "npx",
+    "transport": "stdio",
+    "args": [
+      "-y",
+      "mcp-remote",
+      "http://joinai-mcp-server:7803/mcp",
+      "--allow-http"
+    ]
+  },
+  "joinai-serper": {
+    "command": "npx",
+    "transport": "stdio",
+    "args": [
+      "-y",
+      "mcp-remote",
+      "http://joinai-mcp-server:7801/mcp",
+      "--allow-http"
+    ]
+  },
+  "joinai-serpapi": {
+    "command": "npx",
+    "transport": "stdio",
+    "args": [
+      "-y",
+      "mcp-remote",
+      "http://joinai-mcp-server:7802/mcp",
+      "--allow-http"
+    ]
+  },
+  "joinai-baidu": {
+    "command": "npx",
+    "transport": "stdio",
+    "args": [
+      "-y",
+      "mcp-remote",
+      "http://joinai-mcp-server:7805/mcp",
+      "--allow-http"
+    ]
+  },
+  "joinai-duckduckgo": {
+    "command": "npx",
+    "transport": "stdio",
+    "args": [
+      "-y",
+      "mcp-remote",
+      "http://joinai-mcp-server:7806/mcp",
+      "--allow-http"
+    ]
+  },
+  "browser-use": {
+    "command": "npx",
+    "transport": "stdio",
+    "args": [
+      "-y",
+      "mcp-remote",
+      "https://api.browser-use.com/mcp",
+      "--header",
+      "X-Browser-Use-API-Key: xxxxx"
+    ]
+  }
+}

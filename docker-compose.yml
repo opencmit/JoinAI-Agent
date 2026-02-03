@@ -1,0 +1,126 @@
+services:
+  joinai-frontend:
+    build: ./frontend
+    container_name: joinai_frontend
+    restart: always
+    env_file:
+      - ./frontend/.env
+    environment:
+      - LANGGRAPH_URL=http://joinai_backend:8000
+      - DEPLOYMENT=local
+    ports:
+      - "9094:3000"
+    depends_on:
+      - joinai-backend
+    entrypoint: [ "/bin/sh", "-c", "/app/start.sh" ]
+    volumes:
+      - shared-data:/shared
+
+  joinai-backend:
+    build: ./backend
+    container_name: joinai_backend
+    restart: always
+    # 容器内部 LangGraph API 默认监听 8000
+
+    depends_on:
+      langgraph-redis:
+        condition: service_healthy
+      langgraph-postgres:
+        condition: service_healthy
+      joinai-mcp-server:
+        condition: service_started
+    env_file:
+      - ./backend/.env
+    environment:
+      # OPENAI_API_KEY: ${OPENAI_API_KEY}
+      # 1. 强制置空配置文件路径，防止它干扰，我们改用手动指定
+      LANGGRAPH_CONFIG: ""
+      
+      # 2. 显式写入 JSON 字符串。注意：外层单引号，内层双引号
+      LANGSERVE_GRAPHS: '{"agent": "/deps/joinai/langgraph_agent/graph/graph.py:agent_graph"}'
+
+      # Redis pg 配置
+      REDIS_URI: redis://langgraph-redis:6379
+      POSTGRES_URI: postgres://postgres:postgres@langgraph-postgres:5432/postgres?sslmode=disable
+      
+      # 指定 MCP Server 主机名，供 run_all.py 和 client 使用
+      JOINAI_MCP_HOST: "joinai-mcp-server"
+    # 添加 extra_hosts 以支持访问宿主机服务
+    # 注意：docker-compose 创建的网络不会自动配置 host.docker.internal
+    # 需要显式配置 extra_hosts，即使 Windows Docker Desktop 默认支持
+    # 因为 docker-compose 使用的是自定义网络，不是默认的 bridge 网络
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"  # Windows/Mac 使用 host-gateway
+      # 如果 host-gateway 不工作，可以手动指定 IP:
+      # - "host.docker.internal:172.20.10.5"
+    volumes:
+      - shared-data:/shared
+
+  # --- 独立 MCP Server 容器 ---
+  joinai-mcp-server:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: joinai_mcp_server
+    restart: always
+    # 重写 entrypoint 以避开 base image (langgraph-api) 可能存在的默认启动脚本
+    entrypoint: ["python", "mcp_server/run_all.py"]
+    env_file:
+      - ./backend/.env
+    environment:
+      # 强制绑定到 0.0.0.0 以供 backend 访问
+      JOINAI_MCP_HOST: "0.0.0.0"
+    volumes:
+      - shared-data:/shared
+
+  # --- 添加 Redis ---
+  langgraph-redis:
+    image: redis:6
+    container_name: langgraph-redis
+    healthcheck:
+      test: redis-cli ping
+      interval: 5s
+      timeout: 1s
+      retries: 5
+
+  # --- 添加 Postgres ---
+  langgraph-postgres:
+    image: postgres:16
+    container_name: langgraph-postgres
+    ports:
+      - "5433:5432" # 避免占用宿主机默认的 5432
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - langgraph-data:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U postgres
+      start_period: 10s
+      timeout: 1s
+      retries: 5
+      interval: 5s
+
+# --- A2A Pic-Agent 多模态识别智能体 ---
+  pic-agent:
+    build: ./backend/a2a_agent/pic-agent
+    container_name: pic_agent
+    restart: always
+    ports:
+      - "8001:8001"  # 映射到宿主机端口
+    volumes:
+      - shared-data:/shared
+    healthcheck:
+      # 检查端口是否监听（使用 Python 检查）
+      test: ["CMD-SHELL", "python -c \"import socket; s=socket.socket(); s.connect(('localhost', 8001)); s.close()\" || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  langgraph-data:
+    driver: local
+  shared-data:
+    driver: local

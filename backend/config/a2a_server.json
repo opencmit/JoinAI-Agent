@@ -1,0 +1,6 @@
+{
+  "multimodal_agent": {
+    "base_url": "http://pic-agent:8001",
+    "enabled": true
+  }
+}

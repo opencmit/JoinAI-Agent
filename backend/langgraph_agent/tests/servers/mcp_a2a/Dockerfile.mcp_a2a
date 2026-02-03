@@ -1,0 +1,58 @@
+# ===============================================
+# MCP A2A Knowledge Server Docker 镜像
+# 基于 Python 3.12 构建的轻量级测试服务器
+# ===============================================
+
+FROM python:3.12-slim
+
+# 设置环境变量
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    DEBIAN_FRONTEND=noninteractive
+
+# 设置工作目录
+WORKDIR /app
+
+# 只安装curl用于健康检查（跳过其他不必要的包）
+RUN apt-get update && apt-get install -y \
+    --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+# 复制依赖文件并安装Python包
+COPY requirements_mcp_a2a.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 创建应用目录结构
+RUN mkdir -p /app/servers /app/logs /app/data
+
+# 复制服务器文件
+COPY mcp_a2a_knowledge_test_server.py /app/servers/
+
+# 设置权限
+RUN chmod +x /app/servers/mcp_a2a_knowledge_test_server.py
+
+# 创建非root用户
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+USER appuser
+
+# 暴露端口
+EXPOSE 18585
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:18585/health || exit 1
+
+# 启动命令
+CMD ["python", "/app/servers/mcp_a2a_knowledge_test_server.py"]
+
+# 添加标签信息
+LABEL maintainer="General Agent Team" \
+      version="1.0.0" \
+      description="MCP A2A Knowledge Server - 统一MCP工具调用和A2A智能体服务" \
+      service="mcp-a2a-knowledge-server" \
+      port="18585" 

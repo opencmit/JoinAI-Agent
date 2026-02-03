@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: .
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: .
+  template:
+    metadata:
+      labels:
+        app: .
+    spec:
+      containers:
+      - name: .
+        image: langgraph-server:3.12
+        ports:
+        - containerPort: 8000
+        env: []
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: .
+spec:
+  selector:
+    app: .
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP
