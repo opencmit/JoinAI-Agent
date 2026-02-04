@@ -1,130 +1,134 @@
-# JoinAI-Agent
+<div align="center">
 
-<table>
-<tr>
-<td width="200" valign="top">
+<p align="center">
+  <img src="images/logo2.jpeg" alt="Logo" width="80" style="vertical-align: middle; margin-right: 20px;">
+  <span style="font-size: 2em; font-weight: bold; vertical-align: middle;">JoinAI-Agent</span>
+</p>
 
-<img src="images/logo2.jpeg" alt="Logo" width="150">
+![Python](https://img.shields.io/badge/Python-3.12+-blue.svg)
+![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)
+![Contributions](https://img.shields.io/badge/Contributions-welcome-green.svg)
 
-</td>
-<td valign="top">
+**A General AI Agent That Thinks and Acts**
 
-JoinAI-Agent 诞生于中国移动自主研发的九天·聚智智能体平台。作为一款"会思考、会行动"的AI智能体，JoinAI-Agent率先定义新一代企业级智能体引擎核心能力，面向复杂任务场景，系统性构建了从感知、规划、执行到协同的完整智能体能力闭环，标志着中国移动在通用智能体系统领域取得重要突破。JoinAI-Agent的开源将打破技术壁垒，加速产业协作，为千行百业智能升级持续赋能。
+Systematically building a complete agent capability closed loop from perception, planning, execution to collaboration for complex task scenarios.
 
-此次我们开源了JoinAI-Agent的标准框架和基础能力，整个系统采用前后端分离的架构，前端支持附件上传、沙箱任务跟踪等，后端基于DAG 执行引擎，内置多个专业子智能体（如信息整合、代码专家、报告生成等）和丰富的工具生态（如搜索、文件处理等）。
+[中文](README_CN.md) • [Framework Performance](#framework-performance) • [Project Architecture](#project-architecture) • [Quick Start](#quick-start) • [Examples](#examples)
 
-</td>
-</tr>
-</table>
 
-## 📑 目录
+</div>
 
-[English README](README_EN.md) | [框架性能](#框架性能) | [项目架构](#项目架构) | [快速开始](#快速开始) | [示例演示](#示例演示)
+---
+## What is JoinAI-Agent
 
-## 📋 框架性能 <a id="框架性能"></a>
+JoinAI-Agent is born from China Mobile's self-developed Jiutian·Juzhi Intelligent Agent Platform. As an AI agent that "thinks and acts", JoinAI-Agent pioneers the definition of next-generation enterprise-level agent engine core capabilities, systematically building a complete agent capability closed loop from perception, planning, execution to collaboration for complex task scenarios, marking an important breakthrough for China Mobile in the field of general agent systems. The open source of JoinAI-Agent will break down technical barriers, accelerate industry collaboration, and continuously empower intelligent upgrades across industries.
 
-在GAIA基准测试中，JoinAI-Agent综合成绩达到90.70，位列榜单第一名。
+This time we have open-sourced the standard framework and basic capabilities of JoinAI-Agent. The entire system adopts a frontend-backend separation architecture, with the frontend supporting file uploads, sandbox task tracking, etc., and the backend based on a DAG execution engine, with built-in multiple professional sub-agents (such as information integration, code expert, report generation, etc.) and a rich tool ecosystem (such as search, file processing, etc.).
 
-![GAIA评测榜](images/GAIA.png)
+## 📋 Framework Performance <a id="framework-performance"></a>
 
-## 🏗️ 项目架构 <a id="项目架构"></a>
+In the GAIA benchmark test, JoinAI-Agent achieved a comprehensive score of 90.70, ranking first on the leaderboard.
 
-![项目架构图](images/JoinAI.png)
+![GAIA Leaderboard](images/GAIA.png)
 
-本开源项目开源了前端、智能体的react模式、多个子智能体（reporter、researcher、coder）、多种标准化交互协议、沙箱等。
+## 🏗️ Project Architecture <a id="project-architecture"></a>
 
-### **特点和优势**
+![Project Architecture Diagram](images/JoinAI.png)
 
-- **端到端完整的产品**：一键部署，开箱即用，支持二次开发和定制化扩展
-- **标准化协议支持**：集成 MCP 和 A2A 协议，支持工具和智能体的可插拔扩展
-- **安全的沙箱执行**：基于 E2B 沙箱环境，提供安全的代码执行能力，支持 Shell、文件操作、浏览器自动化等
-- **灵活的架构设计**：前后端分离，模块化设计，便于集成和维护
+This open source project open-sources the frontend, agent's react mode, multiple sub-agents (reporter, researcher, coder), various standardized interaction protocols, sandbox, etc.
 
-### **核心功能**
+### **Features and Advantages**
 
-JoinAI-Agent是一个功能强大的智能体引擎，集成了以下核心能力：
-- 🔧 **工具集成**：支持网页搜索、文件操作、代码执行等多种工具
-- 🤝 **A2A支持**：支持 A2A 协议，实现智能体间的协作
-- 🔌 **MCP支持**：集成 MCP协议，支持扩展工具
-- 🖥️ **沙箱执行**：安全的代码执行环境
-- 💬 **Web界面**：简洁易用的前端界面，支持附件上传
-- 🌐 **Browser-Use**：支持浏览器自动化操作，包括点击、输入、滚动等操作，实现自动化网页交互和任务执行
+- **End-to-End Complete Product**: One-click deployment, out-of-the-box, supporting secondary development and customized extensions
+- **Standardized Protocol Support**: Integrates MCP and A2A protocols, supporting pluggable extensions of tools and agents
+- **Secure Sandbox Execution**: Based on E2B sandbox environment, providing secure code execution capabilities, supporting Shell, file operations, browser automation, etc.
+- **Flexible Architecture Design**: Frontend-backend separation, modular design, easy to integrate and maintain
 
-## 🚀 快速开始 <a id="快速开始"></a>
+### **Core Features**
 
-### 前置要求
+JoinAI-Agent is a powerful agent engine that integrates the following core capabilities:
+- 🔧 **Tool Integration**: Supports various tools including web search, file operations, code execution, and more
+- 🤝 **A2A Support**: Supports A2A protocol for inter-agent collaboration
+- 🔌 **MCP Support**: Integrates MCP protocol, supporting extensible tools
+- 🖥️ **Sandbox Execution**: Secure code execution environment
+- 💬 **Web Interface**: Simple and easy-to-use frontend interface with file upload support
+- 🌐 **Browser-Use**: Supports browser automation operations, including clicking, typing, scrolling, and other operations, enabling automated web interaction and task execution
 
-- Docker 和 Docker Compose
-- Python 3.12+（本地开发）
-- Node.js 20+（本地开发）
+## 🚀 Quick Start <a id="quick-start"></a>
 
-### 使用 Docker Compose 部署（推荐）
+### Prerequisites
 
-1. **克隆项目**
+- Docker and Docker Compose
+- Python 3.12+ (for local development)
+- Node.js 20+ (for local development)
+
+### Deploy with Docker Compose (Recommended)
+
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/opencmit/JoinAI-Agent.git
 cd JoinAI-Agent
 ```
 
-2. **配置环境变量**
+2. **Configure environment variables**
 
-后端服务：复制 `backend/.env.template` 文件为 `backend/.env`，在 `.env` 文件中填写必要的密钥，模型和沙箱为必须配置项，E2B_API_KEY可在https://e2b.dev/进行申请：
+Backend service: Copy `backend/.env.template` to `backend/.env`, and fill in the necessary keys in the `.env` file. Model and sandbox configurations are required. E2B_API_KEY can be applied at https://e2b.dev/:
 
-**模型示例：**
+**Model examples:**
 
 ```env
-# OpenAI 官方 API
+# OpenAI Official API
 OPENAI_BASE_URL=https://api.openai.com/v1
 OPENAI_API_KEY=sk-your-openai-api-key-here
 BASE_LLM=gpt-5
 ```
 
 ```env
-# 兼容其他模型API服务
+# Compatible with other model API services
 OPENAI_BASE_URL=https://api.siliconflow.cn/v1
 OPENAI_API_KEY=your-api-key
 BASE_LLM=deepseek-ai/DeepSeek-V3.2-Exp
 ```
-若需使用搜索JINA、SERPER、Bocha搜索工具，需申请JINA_API_KEY（https://jina.ai/）、SERPER_API_KEY（https://serper.dev）、BOCHA_API_KEY（https://bocha.cn/）并填入.env
 
-前端服务：复制 `frontend/.env.template` 文件为 `frontend/.env`，在 `.env` 文件中填写必要的密钥，其中 `E2B_API_KEY` 需和后端 `.env` 中的 `E2B_API_KEY` 保持一致
+To use JINA, SERPER, or Bocha search tools, you need to apply for JINA_API_KEY (https://jina.ai/), SERPER_API_KEY (https://serper.dev), and BOCHA_API_KEY (https://bocha.cn/) and add them to the `.env` file.
 
-A2A智能体：已接入图片解析智能体，若使用该智能体，需复制 `backend/a2a_agent/pic_agent/.env.template` 文件为 `backend/a2a_agent/pic_agent/.env`,在 `.env` 文件中填写VL模型相关信息,通过附件形式上传图片。
+Frontend service: Copy `frontend/.env.template` to `frontend/.env`, and fill in the necessary keys in the `.env` file. The `E2B_API_KEY` must match the `E2B_API_KEY` in the backend `.env` file.
+
+A2A agent: An image parsing agent is preconfigured. To use it, copy `backend/a2a_agent/pic_agent/.env.template` to `backend/a2a_agent/pic_agent/.env`, fill in the VL model information in the `.env` file, and upload images via attachment.
 ```env
 OPENAI_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
 OPENAI_API_KEY=sk-your-openai-api-key-here
 BASE_LLM=qwen-vl-plus
 ```
 
-
-3. **启动服务**
+3. **Start services**
 
 ```bash
 docker-compose up -d
 ```
 
-4. **访问应用**
+4. **Access the application**
 
-- 前端界面：http://localhost:9094
+- Frontend interface: http://localhost:9094
 
-![前端界面](images/frontend.png)
+![Frontend interface](images/frontend.png)
 
-- 后端 API：http://localhost:18100
+- Backend API: http://localhost:18100
 
-### 本地开发
+### Local Development
 
-#### 后端开发
+#### Backend Development
 
 ```bash
 cd backend
 pip install -r requirements.txt
 
-# 测试后端服务
+# Test backend service
 python test_demo.py
 ```
 
-#### 前端开发
+#### Frontend Development
 
 ```bash
 cd frontend
@@ -132,29 +136,30 @@ pnpm install
 pnpm dev
 ```
 
-### MCP 配置
+### MCP Configuration
 
-MCP 工具配置在 `backend/config/mcp_server.json`，目前已配置Serper、Jina搜索工具，配置对应秘钥后即可使用。支持用户自行配置 MCP 工具。
+MCP tool configuration is located in `backend/config/mcp_server.json`. Serper and Jina search tools are already configured. After configuring the corresponding keys, they can be used. Users can configure MCP tools themselves.
 
-### A2A配置
-A2A智能体配置在 `backend/config/a2a_server.json`，目前已配置图片解析智能体，配置对应秘钥后即可使用。支持用户自行配置A2A智能体。
+### A2A Configuration
 
-## 📹 示例演示 <a id="示例演示"></a>
+A2A agent configuration is in `backend/config/a2a_server.json`. An image parsing agent is preconfigured. After configuring the corresponding keys, it can be used. Users can configure A2A agents themselves.
+
+## 📹 Examples <a id="examples"></a>
 
 <table>
 <tr>
 <td width="50%">
 
 **Browser-Use**
-在`backend/config/mcp_server.json`browser-use部分填入秘钥（https://cloud.browser-use.com/），则可以通过浏览器工具自动操作网页，包括点击、输入、滚动等操作，实现自动化网页交互和任务执行。
+Fill in the API key in the browser-use section of `backend/config/mcp_server.json` (https://cloud.browser-use.com/), then the agent can automatically operate web pages through browser tools, including clicking, typing, scrolling, and other operations, enabling automated web interaction and task execution.
 
 https://github.com/user-attachments/assets/a161f4fa-c894-4ecd-b415-defd3bdf2dbf
 
 </td>
 <td width="50%">
 
-**A2A_图片解析**
-已通过A2A接入图片解析智能体，在`backend/a2a_agent/pic_agent/.env`中配置VL模型信息，通过附件上传图片即可使用。
+**A2A_Image Parsing**
+An image parsing agent has been integrated via A2A. Configure VL model information in `backend/a2a_agent/pic_agent/.env`, and upload images via attachment to use it.
 
 https://github.com/user-attachments/assets/3fc43ca2-f5b6-461f-a62e-4f4b18e58e44
 
@@ -163,16 +168,16 @@ https://github.com/user-attachments/assets/3fc43ca2-f5b6-461f-a62e-4f4b18e58e44
 <tr>
 <td width="50%">
 
-**报告编写**
-输入报告主题，在`backend/.env`中填入Serper、Jina秘钥，通过调用Serper、Jina等搜索工具收集主题相关信息，由报告智能体完成报告编写。
+**Report Writing**
+Enter a report topic, fill in Serper and Jina keys in `backend/.env`, collect relevant information about the topic by calling search tools such as Serper and Jina, and the report agent will complete the report writing.
 
 https://github.com/user-attachments/assets/37a83da1-def8-415b-b125-9c4d651acc45
 
 </td>
 <td width="50%">
 
-**附件处理**
-支持上传多种格式的附件文件，智能体可以读取和处理附件内容，包括文本文件、图片等，针对文本附件进行markdown格式转换后进行后续任务。
+**Attachment Processing**
+Supports uploading attachments in various formats. The agent can read and process attachment content, including text files, images, etc. Text attachments are converted to markdown format before subsequent tasks.
 
 https://github.com/user-attachments/assets/b50b0535-fba5-4933-a648-772ff02d7ce0
 
@@ -180,24 +185,23 @@ https://github.com/user-attachments/assets/b50b0535-fba5-4933-a648-772ff02d7ce0
 </tr>
 </table>
 
-## 🔒 安全注意事项
+## 🔒 Security Considerations
 
-- 沙箱环境默认启用，确保代码执行安全
-- 敏感配置通过环境变量管理
-- API 密钥不要提交到代码仓库
+- Sandbox environment is enabled by default to ensure secure code execution
+- Sensitive configurations are managed through environment variables
+- Do not commit API keys to the code repository
 
 ## 📝 ToDoList
-- [ ] plann推理模式
-- [ ] 更多工具支持
-- [ ] 多智能体记忆
-- [ ] 丰富的执行环境
+- [ ] Plan reasoning mode
+- [ ] More tool support
+- [ ] Multi-agent memory
+- [ ] Rich execution environments
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 [Apache License 2.0](LICENSE) 开源许可证。
+This project is licensed under the [Apache License 2.0](LICENSE) open source license.
 
 ---
 
-**注意**：本项目正在积极开发中，API 和配置可能会发生变化。建议查看最新文档和代码更新。
-
+**Note**: This project is under active development. APIs and configurations may change. Please refer to the latest documentation and code updates.
 
